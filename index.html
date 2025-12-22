@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Save Toby</title>
+    
+    <!-- Tailwind CSS (Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles for Scroll and Animation -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+        }
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-25%) translateX(-50%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+            50% { transform: translateY(0) translateX(-50%); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+        }
+        ::selection {
+            background: #ea580c; /* Orange 600 */
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <div class="relative w-full h-[65vh] overflow-hidden">
+        <!-- Main Hero Photo -->
+        <img src="https://i.postimg.cc/13V1wJj5/Screenshot_20251220_005135_Instagram.jpg" alt="Toby Hero" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale hover:scale-105 transition-transform duration-[10s] ease-linear">
+        <div class="hero-overlay absolute inset-0 z-10"></div>
+        
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <span class="inline-block py-1 px-3 rounded-full bg-red-600/90 text-white text-xs font-bold tracking-wider mb-4 uppercase animate-pulse">
+                Urgent: Surgery Needed
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-tight max-w-4xl drop-shadow-2xl">
+                Please Help Save Toby
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed mb-8 drop-shadow-lg font-light">
+                Our Christmas puppy is fighting a deadly bone infection. We have run out of funds and time.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="openModal()" class="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white text-lg font-bold rounded-full transition-all shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:shadow-[0_0_40px_rgba(234,88,12,0.6)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i data-lucide="heart" class="fill-current w-5 h-5"></i>
+                    Donate to Save Him
+                </button>
+                <button onclick="copyPageLink()" id="shareBtn" class="px-8 py-4 bg-slate-800/80 hover:bg-slate-700 text-white text-lg font-medium rounded-full transition-all border border-slate-600 backdrop-blur-sm flex items-center justify-center gap-2">
+                    <i data-lucide="share-2" class="w-5 h-5"></i>
+                    <span id="shareText">Share Story</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Arrow -->
+        <div class="absolute bottom-8 left-1/2 z-20 animate-bounce-slow text-slate-500">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 py-16 relative">
+        
+        <!-- Urgent Alert -->
+        <div class="bg-red-900/20 border border-red-500/30 rounded-2xl p-6 mb-12 flex items-start gap-4 backdrop-blur-sm">
+            <div class="bg-red-500/20 p-3 rounded-full shrink-0">
+                <i data-lucide="alert-triangle" class="text-red-500 w-6 h-6"></i>
+            </div>
+            <div>
+                <h3 class="text-red-400 font-bold text-lg mb-1">Critical Update</h3>
+                <p class="text-slate-300 leading-relaxed text-sm md:text-base">
+                    Toby has been diagnosed with <span class="text-white font-semibold">Acute Septic Osteomyelitis</span>. Without surgery, the infection will spread to his bloodstream. We are desperate.
+                </p>
+            </div>
+        </div>
+
+        <!-- Story Article -->
+        <article class="prose prose-invert prose-lg max-w-none text-slate-300">
+            <p class="text-2xl text-slate-100 font-light leading-relaxed mb-8 border-l-4 border-orange-600 pl-6 italic">
+                "He has so many squirrels left to chase and so many cuddles left to give. He doesn't deserve to lose his life because of a credit card policy."
+            </p>
+
+            <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Christmas Miracle That Turned Into a Nightmare</h2>
+            <p class="mb-6">
+                Toby came into our lives just a year ago. He was supposed to be our new beginning—a bundle of floppy ears, soft paws, and a howl that made the whole house laugh. He is barely a year old, but he is already the heart of our family.
+            </p>
+
+            <!-- Photo Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+                <!-- Happy Photo (Leaves) -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 border border-slate-700">
+                    <img src="https://i.postimg.cc/1zNRR9SQ/Screenshot_20251220_005304_Instagram.jpg" alt="Happy Toby" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white text-sm font-medium">Enjoying the fall weather just weeks before he fell ill</p>
+                    </div>
+                </div>
+                <!-- Sick Photo -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 border border-slate-700">
+                    <img src="
+
+
