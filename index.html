@@ -109,6 +109,189 @@
                 </div>
                 <!-- Sick Photo -->
                 <div class="relative group overflow-hidden rounded-2xl h-64 border border-slate-700">
-                    <img src="
+                    <img src="https://i.postimg.cc/13V1wJj5/Screenshot_20251220_005135_Instagram.jpg" alt="Sick Toby" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale-[50%]">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-red-200 text-sm font-medium flex items-center gap-2">
+                            <i data-lucide="syringe" class="w-4 h-4"></i> Currently fighting infection
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mb-6">
+                Last week, he stopped playing. His leg swelled to twice its size. The pain in his eyes was something no pet owner should ever have to see.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white mt-10 mb-4 flex items-center gap-3">
+                <i data-lucide="credit-card" class="text-blue-400 w-6 h-6"></i>
+                Why We Are Asking For Help
+            </h3>
+            <p class="mb-6">
+                We thought we were responsible. We had a CareCredit card with a <strong>$10,000 limit</strong> specifically for emergencies. We drove to the vet confident we could save him.
+            </p>
+            <p class="mb-6">
+                When we handed over the card, it was declined. We called the bank in a panic, only to learn that due to "economic adjustments," they had slashed our limit to <strong>$800</strong> without a single warning.
+            </p>
+            <p class="mb-6">
+                The surgery, <strong>Surgical Debridement & Reconstruction</strong>, is expensive. The vet has a strict policy: no insurance, no payment plans, cash upfront.
+            </p>
+
+            <!-- Donation Box -->
+            <div class="my-12 p-8 bg-slate-800 rounded-3xl text-center border border-slate-700 shadow-2xl">
+                <h3 class="text-2xl font-bold text-white mb-4">Direct Donation</h3>
+                <p class="text-slate-400 mb-6 max-w-md mx-auto">
+                    We are using CashApp and Venmo to gather funds immediately for the vet deposit. Any amount helps save Toby's leg.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- CashApp -->
+                    <div class="bg-slate-900 rounded-xl p-4 border border-green-500/30 relative overflow-hidden group">
+                        <p class="text-xs text-green-400 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Cash App</p>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="text-xl font-mono text-white font-bold tracking-wider truncate">$bmxrid</span>
+                            <button onclick="copyToClipboard('$bmxrid', 'cashapp')" class="p-2 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white transition-colors" id="btn-cashapp">
+                                <i data-lucide="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <a href="https://cash.app/$bmxrid" target="_blank" class="w-full py-3 bg-[#00D632] hover:bg-[#00bf2c] text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+                            Open Cash App <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Venmo -->
+                    <div class="bg-slate-900 rounded-xl p-4 border border-blue-500/30 relative overflow-hidden group">
+                        <p class="text-xs text-blue-400 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Venmo</p>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="text-xl font-mono text-white font-bold tracking-wider truncate">@aimeelo</span>
+                            <button onclick="copyToClipboard('@aimeelo', 'venmo')" class="p-2 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white transition-colors" id="btn-venmo">
+                                <i data-lucide="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <a href="https://venmo.com/u/aimeelo" target="_blank" class="w-full py-3 bg-[#008CFF] hover:bg-[#007fe6] text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+                            Open Venmo <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <div class="border-t border-slate-800 pt-8 mt-12 text-center text-slate-500 text-sm">
+            <p class="mb-2">Organized by the Family of Toby</p>
+            <p>Please keep Toby in your prayers.</p>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="donationModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-8 shadow-2xl relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-white">Choose Donation Method</h2>
+                <p class="text-slate-400 mt-2 text-sm">100% of funds go directly to the vet bill.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Cash App Modal Link -->
+                <a href="https://cash.app/$bmxrid" target="_blank" class="flex items-center justify-between w-full p-4 bg-[#00D632]/10 hover:bg-[#00D632]/20 border border-[#00D632]/50 rounded-xl transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#00D632] p-2 rounded-lg text-white">
+                            <i data-lucide="banknote" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-bold text-white group-hover:text-[#00D632] transition-colors">Cash App</p>
+                            <p class="text-xs text-slate-400">$bmxrid</p>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="text-[#00D632] w-5 h-5"></i>
+                </a>
+
+                <!-- Venmo Modal Link -->
+                <a href="https://venmo.com/u/aimeelo" target="_blank" class="flex items-center justify-between w-full p-4 bg-[#008CFF]/10 hover:bg-[#008CFF]/20 border border-[#008CFF]/50 rounded-xl transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#008CFF] p-2 rounded-lg text-white">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-bold text-white group-hover:text-[#008CFF] transition-colors">Venmo</p>
+                            <p class="text-xs text-slate-400">@aimeelo</p>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="text-[#008CFF] w-5 h-5"></i>
+                </a>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <p class="text-xs text-center text-slate-600">
+                    Thank you for helping us save our little guy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Modal Functions
+        function openModal() {
+            document.getElementById('donationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('donationModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('donationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Copy Function
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById(`btn-${type}`);
+                const originalContent = btn.innerHTML;
+                
+                // Change icon to checkmark
+                btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 text-green-500"></i>';
+                lucide.createIcons();
+                
+                // Revert back after 2 seconds
+                setTimeout(() => {
+                    btn.innerHTML = '<i data-lucide="copy" class="w-5 h-5"></i>';
+                    lucide.createIcons();
+                }, 2000);
+            });
+        }
+
+        // Share Page Button
+        function copyPageLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById('shareBtn');
+                const textSpan = document.getElementById('shareText');
+                const originalText = textSpan.innerText;
+
+                textSpan.innerText = "Link Copied!";
+                btn.classList.remove('bg-slate-800/80');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    textSpan.innerText = originalText;
+                    btn.classList.add('bg-slate-800/80');
+                    btn.classList.remove('bg-green-600');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
 
 
